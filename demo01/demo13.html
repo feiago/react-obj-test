@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo13-React</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <script src="../build/JSXTransformer.js"></script>
+</head>
+<body>
+<div id="contect"></div>
+<script type="text/babel">
+var Dropdown = React.createClass({
+propTypes: {
+title: ReactPropTypes.string,
+text: ReactPropTypes.string,
+options: ReactPropTypes.array.isRequired
+},
+
+render: function() {
+var optionNodes = this.props.options.map(function(option) {
+return (
+<li key={option.id}>{option.text}</li>
+);
+});
+return (
+<div className="select">
+    {this.props.text}
+    <div className="selector"><i className="iconfont icon-down"></i></div>
+    <ul className="dropdown">{optionNodes}</ul>
+</div>
+);
+}
+});
+
+ReactDOM.render(
+<Dropdown />,
+        document.getElementById("contect")
+);
+</script>
+</body>
+</html>

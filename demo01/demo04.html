@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo04-React</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <style type="text/css">
+        .red{color:red}
+    </style>
+</head>
+<body>
+<div id="demo04"></div>
+<script type="text/babel">
+    //生成一个组件类
+    //自定义组件的首字母必须大写
+    var Msg = React.createClass({
+        render:function(){
+            return <h1>Hello, 名字：{this.props.name}-{this.props.className}={this.props.value}.</h1>;
+        }
+    });
+    ReactDOM.render(
+            <Msg name="Johns" value="ABC" className="red" />,
+            document.getElementById('demo04')
+    );
+</script>
+<div id="contect"></div>
+<script type="text/babel">
+    var Message = React.createClass({
+        render: function(){
+            return <h1>Hi, name is {this.props.name} {this.props.className}</h1>;
+        }
+    });
+    ReactDOM.render(
+            <Message name="Alin" className="wangjie" />,
+            document.getElementById('contect')
+    );
+</script>
+</body>
+</html>

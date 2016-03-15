@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello React Demo02</title>
+    <script src="../build/react-0.13.4.js"></script>
+    <script src="../build/JSXTransformer.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<div id="demo01"></div>
+<script type="text/jsx">
+    var CheckLink = React.createClass({
+        render: function() {
+            // 这样会把 CheckList 所有的 props 复制到 <a>
+            return <a {...this.props}>{'√ '}{this.props.children}</a>;
+        }
+    });
+
+    React.render(
+            <CheckLink href="http://www.51idc.com" target="_blank">
+                Click here!
+            </CheckLink>,
+            document.getElementById('example')
+    );
+
+
+</script>
+</body>
+</html>

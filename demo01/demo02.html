@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo02-React</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="demo02">demo2</div>
+<script type="text/babel">
+    var str = ['AAA', 'BBB' ,'CCC', 'DDD'];
+    ReactDOM.render(
+    <div>
+    {
+        str.map(function(name){
+                return <h2>Hello, {name}.</h2>
+            })
+    }
+    </div>,
+            document.getElementById('demo02')
+    );
+</script>
+
+<div id="contect"></div>
+<script type="text/babel">
+    var str2 = ["1111", '2222', '33333'];
+    ReactDOM.render(
+    <div>
+    {
+        str2.map(function (name){
+            return <h3>Hi, {name}</h3>
+        })
+    }
+    </div>,
+            document.getElementById("contect")
+    );
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo07-React</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="demo07"></div>
+<script type="text/babel">
+    var MyComm = React.createClass({
+        handleClick: function(){
+            this.refs.myTextInput.focus();
+        },
+        render: function(){
+            return (
+                    <div>
+                        <input type="text" ref="myTextInput" />
+                        <input type="button" value="Focus the text input" onClick={this.handleClick} />
+                    </div>
+            );
+        }
+    });
+    ReactDOM.render(
+            <MyComm />,
+            document.getElementById('demo07')
+    );
+</script>
+</body>
+</html>

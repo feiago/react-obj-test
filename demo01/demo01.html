@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo01-React</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="demo01val">aaaaa</div>
+<script type="text/babel">
+    //将模板转为 HTML 语言，并插入指定的 DOM 节点
+    ReactDOM.render(
+            <h1>Hello, I am demo01.</h1>,
+            document.getElementById('demo01val')
+    );
+</script>
+
+<div id="contect"></div>
+<script type="text/babel">
+    ReactDOM.render(
+            <h2>我是第一个测试页面。</h2>,
+            document.getElementById('contect')
+    );
+</script>
+</body>
+</html>
